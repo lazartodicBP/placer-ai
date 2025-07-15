@@ -1,0 +1,43 @@
+@import url(src/styles/utils.css);
+@import url(src/styles/home-page.css);
+@import url(src/components/Card/Card.css);
+@import url(src/components/Divider/Divider.css);
+@import url(src/components/Footer/Footer.css);
+@import url(src/components/Input/Input.css);
+@import url(src/components/Loader/Loader.css);
+@import url(src/components/Navbar/Navbar.css);
+@import url(src/components/PaymentForm/PaymentForm.css);
+@import url(src/components/Select/Select.css);
+@import url(src/components/Sidebar/Sidebar.css);
+@import url(src/components/Tabs/Tabs.css);
+@import url(src/components/TopNavigation/TopNavigation.css);
+@import url(src/pages/register/RegisterPage.css);
+@import url(src/pages/portal/PortalPage.css);
+
+
+@font-face {
+    font-family: 'Times Classic Text';
+    src: local('Times Classic Text'), local('TimesClassicText-Regular'),
+    url('/fonts/TIMESS__.woff2') format('woff2'),
+    url('/fonts/TIMESS__.ttf')   format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Times Classic Text';
+    src: local('TimesClassicText-Bold'),
+    url('/fonts/TIMESSB_.woff2') format('woff2'),
+    url('/fonts/TIMESSB_.ttf')   format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times Classic Text', Arial, Helvetica, sans-serif;
+}

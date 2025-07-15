@@ -1,0 +1,193 @@
+.card-container {
+  width: 18.5rem;
+  min-height: 40rem;
+  padding: 1.5rem;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.15);
+  border-radius: 0;
+  transition: all;
+  transition-duration: 200ms;
+}
+
+.card-container:hover {
+  box-shadow: 0 5px 20px #5e63e5;
+}
+
+.disabled-card {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/*
+  Block: .plan-card
+*/
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  width: 280px;
+  position: relative;
+  transition: box-shadow .2s ease;
+}
+
+
+.plan-card__inner {
+  height: 100%;
+}
+
+/* Elements */
+.plan-card__logo {
+  height: 90px;
+  margin: auto;
+}
+
+.plan-card__title {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 30px;
+  text-transform: capitalize;
+  color: #000;
+}
+
+.plan-card__subtitle {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.plan-card__price {
+  margin-top: 10px;
+  font-size: 50px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.plan-card__price-description {
+  margin: auto 0;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 400;
+}
+
+.plan-card__description {
+  margin-top: 5px;
+}
+
+.plan-card__check {
+  width: 20px;
+  height: 20px;
+}
+
+.plan-card__images {
+  display: flex;
+  margin: auto;
+  gap: 10px;
+  padding: 50px 0;
+}
+
+.plan-card__product-description {
+  font-size: 16px;
+  height: 2rem;
+}
+
+.plan-card__product-description--secondary {
+  font-size: 14px;
+}
+
+.plan-card__try-btn-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+.plan-card__try-btn {
+  width: 12rem;
+  height: 3rem;
+  padding: 8px 10px;
+  text-decoration: none;
+  background-color: #5e63e5;
+  color: #FFFFFF;
+  border: 0;
+
+  &:hover {
+    background-color: #41459f;
+  }
+}
+
+.plan-card__title {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gradient-start, currentColor);
+}
+
+.plan-card__type-0 {
+  --gradient-start: #130909;
+  --gradient-end: #130909;
+}
+.plan-card__type-1 {
+  --gradient-start: #130909;
+  --gradient-end: #130909;
+}
+.plan-card__type-2 {
+  --gradient-start: #130909;
+  --gradient-end: #130909;
+}
+.plan-card__type-3 {
+  --gradient-start: #130909;
+  --gradient-end: #130909;
+}
+
+.plan-card__type-0 .plan-card__title,
+.plan-card__type-1 .plan-card__title,
+.plan-card__type-2 .plan-card__title,
+.plan-card__type-3 .plan-card__title{
+  background-image:
+          linear-gradient(
+                  to right,
+                  var(--gradient-start),
+                  var(--gradient-end)
+          );
+}
+
+.plan-card__divider {
+  margin: 10px 5px;
+  width: 100%;
+  border-top: 1px solid #999999;
+}
+
+.img--bw {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+.plan-card__title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 10px;
+}
+
+.plan-card__title-main {
+  font-weight: 400;
+  font-size: 24px;
+  color: #000;
+  line-height: 1.2;
+}
+
+.plan-card__title-tier {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+  background-image: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
