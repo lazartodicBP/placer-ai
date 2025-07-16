@@ -1,3 +1,5 @@
+import * as process from "node:process";
+
 export const getAccountType = async (): Promise<string | null> => {
   try {
     const response = await fetch("/api/account/type", {
@@ -15,7 +17,10 @@ export const getAccountType = async (): Promise<string | null> => {
 export const createAccount = async (name: string) => {
   try {
     const accountTypeId = await getAccountType();
+    console.log("Params for creating account");
     console.log("accountTypeId:", accountTypeId);
+    console.log("Name:", name);
+    console.log("Status:", "ACTIVE");
 
     const response = await fetch("/api/account", {
       method: "POST",
@@ -37,6 +42,36 @@ export const createAccount = async (name: string) => {
     return null;
   }
 };
+
+export const updateAccount = async (
+  accountData: Record<string, any>
+): Promise<any> => {
+  try {
+
+    console.log("Updating account via internal API:", JSON.stringify(accountData));
+
+    const response = await fetch("/api/account/update", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(accountData),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Failed to update account: ${response.statusText}. ${errorText}`);
+    }
+
+    const data = await response.json();
+    console.log("Account updated successfully via internal API:", data);
+    return data;
+  } catch (error) {
+    console.error("Error updating account via internal API:", error);
+    throw error;
+  }
+};
+
 
 export const getRoleByName = async (name: string): Promise<number | null> => {
   try {

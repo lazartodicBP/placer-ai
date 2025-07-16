@@ -4,7 +4,7 @@ import {
   getAccountByName,
   createAccount,
   createBillingProfile,
-  createAccountProducts, getRoleByName, createExternalUser,
+  createAccountProducts, getRoleByName, createExternalUser, updateAccount,
 } from "@/services/account";
 import Loader from "../Loader/Loader";
 
@@ -65,11 +65,10 @@ const PaymentForm: FC<{ products: Record<string, string>[], token: string }> = (
           },
           targetSelector: "#payment-form",
           apiUrl: 'https://my.billingplatform.com/dhdemo3/hostedPayments/1.0',
-          // apiUrl: `${window.location.origin}/api/hpp`,
           billingProfileId: hostedPaymentPageExternalId,
 
-          amount: 100,
-          walletMode: true,
+          amount: 500,
+          walletMode: false,
           fullName: `${formData.firstName} ${formData.lastName}`,
           currencyCode: CurrencyCode,
           countryCode: 'US',
@@ -149,6 +148,14 @@ const PaymentForm: FC<{ products: Record<string, string>[], token: string }> = (
         console.log("SAVED BILLING PROFILE: ", savedAccount.createResponse[0]);
         savedAccount = await getAccountByName(formData.accountName);
         console.log("SAVED ACCOUNT IN THE END: ", savedAccount);
+        const updatedAccount = await updateAccount({
+          Id: savedAccount.Id,
+          AccountTypeId: savedAccount.AccountTypeId,
+          Status: savedAccount.Status,
+          Name: savedAccount.Name,
+          Owner: "PLAC"
+        });
+        console.log("UPDATED ACCOUNT: ", updatedAccount);
       }
 
       if (!savedAccount.HostedPaymentPageExternalId) {
